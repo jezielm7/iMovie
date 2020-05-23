@@ -175,9 +175,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   description: {
+    left: 7.2,
+    width: '96.5%',
     bottom: '24%',
     borderRadius: 10,
-    width: screenWidth,
     height: screenHeight,
     flexDirection: 'row',
     backgroundColor: 'rgba(255, 255, 255, 0.32)',
