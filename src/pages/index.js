@@ -19,7 +19,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import AddIcon from 'react-native-vector-icons/MaterialIcons';
 
-const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
+const { width: screenWidth, height: screenHeight } = Dimensions.get('screen');
 
 export default function Home() {
   const carouselRef = useRef(null);
@@ -78,7 +78,7 @@ export default function Home() {
                 style={styles.carousel}
                 renderItem={_renderItem}
                 sliderWidth={screenWidth}
-                itemWidth={270}
+                itemWidth={310}
                 inactiveSlideOpacity={0.5}
                 onSnapToItem={ (index) => {
                   setBackground(list[index].img);
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   carouselView: {
     width: '100%',
-    height: 580,
+    height: 620,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -162,8 +162,8 @@ const styles = StyleSheet.create({
     overflow: 'visible',
   },
   carouselImg: {
-    width: 270,
-    height: 430,
+    width: 300,
+    height: 500,
     borderRadius: 12,
     alignSelf: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   description: {
-    bottom: '28%',
+    bottom: '24%',
     borderRadius: 10,
     width: screenWidth,
     height: screenHeight,
@@ -192,8 +192,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   movieDescription: {
-    bottom: 3,
-    fontSize: 14.2,
+    // bottom: 2,
+    fontSize: 15,
     paddingLeft: 20,
     paddingRight: 10,
     color: '#131313',
