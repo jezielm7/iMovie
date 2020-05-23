@@ -3,6 +3,7 @@ import {
   View,
   Text,
   Image,
+  StatusBar,
   ScrollView,
   StyleSheet,
   Dimensions,
@@ -25,6 +26,7 @@ export default function Home() {
 
   const [list, setList] = useState(ArrayFilm);
   const [background, setBackground] = useState(list[0].img);
+  const [colorStatusBar, setColorStatusBar] = useState(list[0].color);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -48,6 +50,7 @@ export default function Home() {
 
   return (
     <ScrollView style={styles.container}>
+      <StatusBar backgroundColor={colorStatusBar} />
       <View style={styles.containerChild}>
         <View style={{ ...StyleSheet.absoluteFill, backgroundColor: "#000" }}>
           <ImageBackground
@@ -80,6 +83,7 @@ export default function Home() {
                 onSnapToItem={ (index) => {
                   setBackground(list[index].img);
                   setActiveIndex(index);
+                  setColorStatusBar(list[index].color);
                 }}
               />
             </View>
@@ -141,15 +145,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   newsTitle: {
-    color: '#fff',
     fontSize: 25,
     marginLeft: 15,
     marginBottom: 10,
     marginVertical: 4,
+    color: 'rgb(170, 170, 170)',
   },
   carouselView: {
     width: '100%',
-    height: 550,
+    height: 580,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -158,18 +162,11 @@ const styles = StyleSheet.create({
     overflow: 'visible',
   },
   carouselImg: {
-    width: 240,
-    height: 400,
+    width: 270,
+    height: 430,
     borderRadius: 12,
     alignSelf: 'center',
     backgroundColor: 'rgba(0,0,0,0.5)',
-  },
-  carouselText: {
-    left: 5,
-    bottom: 10,
-    padding: 15,
-    color: '#fff',
-    position: 'absolute',
   },
   carouselIcon: {
     top: 10,
@@ -178,15 +175,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   description: {
-    bottom: '32.8%',
+    bottom: '28%',
     borderRadius: 10,
     width: screenWidth,
     height: screenHeight,
     flexDirection: 'row',
-    backgroundColor: '#fff',
-    justifyContent: 'space-around'
+    backgroundColor: 'rgba(255, 255, 255, 0.32)',
+    justifyContent: 'space-around',
   },
   movieTitle: {
+    opacity: 0.7,
     fontSize: 22,
     marginBottom: 5,
     color: '#131313',
@@ -194,13 +192,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   movieDescription: {
-    fontSize: 14,
+    bottom: 3,
+    fontSize: 14.2,
     paddingLeft: 20,
     paddingRight: 10,
     color: '#131313',
   },
   descIcon: {
-    top: 4,
+    top: 6,
     right: 20,
   },
 });
