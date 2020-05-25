@@ -27,6 +27,8 @@ export default function Home() {
   const [list, setList] = useState(ArrayFilm);
   const [background, setBackground] = useState(list[0].img);
   const [colorStatusBar, setColorStatusBar] = useState(list[0].color);
+  const [colorTitle, setColorTitle] = useState(list[0].colorTitle);
+
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -69,7 +71,16 @@ export default function Home() {
               </TouchableOpacity>
             </View>
 
-            <Text style={styles.newsTitle}>New Movies</Text>
+            <Text style={{
+              fontSize: 25,
+              marginLeft: 35,
+              marginBottom: 10,
+              marginVertical: 4,
+              color: colorTitle,
+              // fontWeight: 'bold',
+            }}>
+              {list[activeIndex].title}
+            </Text>
 
             <View style={styles.carouselView}>
               <Carousel
@@ -80,10 +91,11 @@ export default function Home() {
                 sliderWidth={screenWidth}
                 itemWidth={310}
                 inactiveSlideOpacity={0.5}
-                onSnapToItem={ (index) => {
+                onSnapToItem={(index) => {
                   setBackground(list[index].img);
                   setActiveIndex(index);
                   setColorStatusBar(list[index].color);
+                  setColorTitle(list[index].colorTitle);
                 }}
               />
             </View>
@@ -94,7 +106,7 @@ export default function Home() {
                 <Text style={styles.movieDescription}>{list[activeIndex].text}</Text>
               </View>
               <TouchableOpacity style={styles.descIcon}>
-              <AddIcon name="library-add" size={30}/>
+                <AddIcon name="library-add" size={30} />
               </TouchableOpacity>
             </View>
 
@@ -143,13 +155,6 @@ const styles = StyleSheet.create({
     top: 12,
     right: 25,
     position: 'absolute',
-  },
-  newsTitle: {
-    fontSize: 25,
-    marginLeft: 15,
-    marginBottom: 10,
-    marginVertical: 4,
-    color: 'rgb(170, 170, 170)',
   },
   carouselView: {
     width: '100%',

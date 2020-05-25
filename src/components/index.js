@@ -7,6 +7,8 @@ export default [
     release: 2018,
     img: 'https://sujeitoprogramador.com/wp-content/uploads/2020/05/background.jpg',
     color: '#171713',
+    colorTitle: '#B0B0B0',
+
   },
   {
     title: "Bad Boys for life",
@@ -14,6 +16,8 @@ export default [
     release: 2020,
     img: 'https://sujeitoprogramador.com/wp-content/uploads/2020/05/badboy.jpg',
     color: 'rgba(48, 75, 102, 1)',
+    colorTitle: 'rgba(48, 75, 102, 1)',
+
   },
   {
     title: "Viúva Negra",
@@ -21,6 +25,8 @@ export default [
     release: 2020,
     img: 'https://sujeitoprogramador.com/wp-content/uploads/2020/05/blackwidow.jpg',
     color: '#180000',
+    colorTitle: 'rgb(255, 240, 245)',
+
   },
   {
     title: "Top Gun: MAVERICK",
@@ -28,6 +34,8 @@ export default [
     release: 2020,
     img: 'https://sujeitoprogramador.com/wp-content/uploads/2020/05/topgun.jpeg',
     color: '#B19972',
+    colorTitle: 'rgba(25, 25, 112, 0.8)',
+
   },
   {
     title: "BloodShot",
@@ -35,6 +43,8 @@ export default [
     release: 2020,
     img: 'https://sujeitoprogramador.com/wp-content/uploads/2020/05/blood.jpg',
     color: '#040718',
+    colorTitle: '#EEC900',
+
   },
   {
     title: "Free Guy",
@@ -42,5 +52,7 @@ export default [
     release: 2020,
     img: 'https://sujeitoprogramador.com/wp-content/uploads/2020/05/freeguy.jpg',
     color: '#277CB2',
+    colorTitle: '#B0C4DE',
+
   }
 ]
